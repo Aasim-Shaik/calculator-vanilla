@@ -6,8 +6,49 @@
     <title>Calculator from Scratch!</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body data-theme-mode="dark">
+    <div id="left">
+        <div class="title">Calculator From Scratch!</div>
+        <button id="theme-button">
+            <div class="svg"></div>
+        </button>
+    </div>
+    <div id="middle">
+        <div id="calculator-container">
+            <div id="screen"></div>
+            <div id="button-container">
+                <div id="top">
+                    <div id="utility-container">
+                        <button id="decimal" class="utility-button">.</button>
+                        <button id="clear" class="utility-button">C</button>
+                        <button id="backspace" class="utility-button">&lt;</button>
+                    </div>
+                    <div id="operator-container">
+                        <button id="add" class="operator-button">+</button>
+                        <button id="substract" class="operator-button">-</button>
+                        <button id="division" class="operator-button">/</button>
+                        <button id="multiplication" class="operator-button">x</button>
+                    </div>
+                </div>
+                <div id="bottom">
+                    <div id="number-container">
+                        <button id="num1" class="number-button">1</button>
+                        <button id="num2" class="number-button">2</button>
+                        <button id="num3" class="number-button">3</button>
+                        <button id="num4" class="number-button">4</button>
+                        <button id="num5" class="number-button">5</button>
+                        <button id="num6" class="number-button">6</button>
+                        <button id="num7" class="number-button">7</button>
+                        <button id="num8" class="number-button">8</button>
+                        <button id="num9" class="number-button">9</button>
+                        <button id="num0" class="number-button">0</button>
+                    </div>
+                    <button id="equal">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right"></div>
 </body>
 <script src="script.js" defer></script>
 </html>
