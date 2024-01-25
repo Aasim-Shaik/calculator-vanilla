@@ -164,6 +164,7 @@ body {
 }
 
 #screen {
+    padding-right: 15px;
     height: 14%;
     width: 100%;
 
@@ -171,6 +172,15 @@ body {
     border-radius: var(--radius);
 
     background-color: rgb(201, 228, 169);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-size: 400%;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.2rem 0.2rem var(--fg-color);
 }
 
 #button-container {
