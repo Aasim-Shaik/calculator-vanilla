@@ -77,7 +77,9 @@ class Calculator {
     }
     
     #divide(num1 , num2){
-        if(typeof num1 == 'number' && typeof num2 == 'number')
+        if(typeof num2 == 'number' && num2 == 0)
+            return 'error';
+        else if(typeof num1 == 'number' && typeof num2 == 'number')
             return Math.round((num1 / num2)*10000)/10000;
         else
             return -1;
@@ -169,7 +171,7 @@ buttonContainer.addEventListener('click' , (e) => {
             calc.clearArray();
     }
 
-        console.log(calc.arr);
+        console.log(calc.getArray);
     }
 
     if(id == 'decimal'){
@@ -205,6 +207,5 @@ buttonContainer.addEventListener('click' , (e) => {
         }
 
     }
-
 
 });
