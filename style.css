@@ -163,12 +163,22 @@ body {
     gap: 40px;
 }
 
-#screen {
-    padding-right: 15px;
+#screen-container {
     height: 14%;
     width: 100%;
-
+    display: flex;
+    justify-content: space-between;
     border: 2px solid var(--calculator-outline);
+    border-radius: var(--radius);
+    background-color: rgb(201, 228, 169);
+
+}
+
+#screen {
+    padding-right: 15px;
+    width: 100%;
+
+    border: 0px solid var(--calculator-outline);
     border-radius: var(--radius);
 
     background-color: rgb(201, 228, 169);
@@ -181,6 +191,21 @@ body {
     font-weight: 900;
     color: rgb(255, 255, 255);
     text-shadow: 0.2rem 0.2rem var(--fg-color);
+}
+
+#current-operator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 70px;
+    border: 0px solid var(--calculator-outline);
+    border-radius: var(--radius);
+
+    color: var(--fg-color);
+    font-size: 300%;
+    font-weight: 900;
 }
 
 #button-container {

@@ -101,7 +101,15 @@ function printToScreen(num){
     return true;
 }
 
+function printOperatorToScreen(id){
+    let operatorScreen = document.querySelector('#current-operator');
+    const idToOperator = {add:'+', substract:'-', division:'/', multiplication:'*', '':''};
+    operatorScreen.textContent = idToOperator[id];
+}
+
 function clearScreen(){
+    let currOperator = document.querySelector('#current-operator');
+    currOperator.textContent = '';
     let screen = document.querySelector('#screen');
     screen.dataset.length = 0;
     calc.setDecimalExists(false);
@@ -194,6 +202,7 @@ buttonContainer.addEventListener('click' , (e) => {
     }
 
     if( id == 'add' || id == 'substract' || id == 'division' || id == 'multiplication' ){
+        printOperatorToScreen(id);
         let content = document.querySelector('#screen').textContent;
         if(content == ''){
             calc.setOperator(id);
