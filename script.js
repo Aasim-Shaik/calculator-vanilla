@@ -2,8 +2,6 @@
 class Calculator {
 
     #screenValue = '';
-
-    #screenLength = 0 ;
     
     #isDecimalExists = false;
     
@@ -25,12 +23,8 @@ class Calculator {
         return this.#screenValue;
     }
 
-    setScreenLength(num) {
-        this.#screenLength = num;
-    }
-
     get screenlength(){
-        return this.#screenLength;
+        return this.#screenValue.length;
     }
     
     calculate(){
@@ -78,33 +72,33 @@ class Calculator {
     
     #add(num1 , num2){
         if(typeof num1 == 'number' && typeof num2 == 'number')
-        return num1 + num2;
-    else
-    return -1;
-}
+            return num1 + num2;
+        else
+            return -1;
+    }
 
-#substract(num1 , num2){
-    if(typeof num1 == 'number' && typeof num2 == 'number')
-    return num1 - num2;
-else
-return -1;
-}
+    #substract(num1 , num2){
+        if(typeof num1 == 'number' && typeof num2 == 'number')
+            return num1 - num2;
+        else
+            return -1;
+    }
 
-#multiply(num1 , num2){
-    if(typeof num1 == 'number' && typeof num2 == 'number')
-    return Math.round((num1 * num2)*10000)/10000;
-else
-return -1;
-}
+    #multiply(num1 , num2){
+        if(typeof num1 == 'number' && typeof num2 == 'number')
+            return Math.round((num1 * num2)*10000)/10000;
+        else
+            return -1;
+    }
 
-#divide(num1 , num2){
-    if(typeof num2 == 'number' && num2 == 0)
-    return 'error';
-else if(typeof num1 == 'number' && typeof num2 == 'number')
-return Math.round((num1 / num2)*10000)/10000;
-else
-return -1;
-}
+    #divide(num1 , num2){
+        if(typeof num2 == 'number' && num2 == 0)
+            return 'error';
+        else if(typeof num1 == 'number' && typeof num2 == 'number')
+            return Math.round((num1 / num2)*10000)/10000;
+        else
+            return -1;
+    }
 
 }
 
@@ -135,7 +129,7 @@ addEventListener('load' , (e) => {
         function printToScreen(num){
             let screen = document.querySelector('#screen');
         
-            let length = calc.screenValue.length;
+            let length = calc.screenlength;
         
             if(length >17){
                 screen.textContent = 'Too long Number!';
@@ -143,7 +137,6 @@ addEventListener('load' , (e) => {
             }
         
             calc.setScreenValue(calc.screenValue+num);
-            calc.setScreenLength(++length);
         
             screen.textContent = calc.screenValue;
             return true;
@@ -161,7 +154,6 @@ addEventListener('load' , (e) => {
             screen.textContent = '';
         
             //clear the class variable
-            calc.setScreenLength(0);
             calc.setScreenValue('');
             calc.setDecimalExists(false);
         }
@@ -170,7 +162,7 @@ addEventListener('load' , (e) => {
             let screen = document.querySelector('#screen');
             
             let content = calc.screenValue;
-            let size = content.length;
+            let size = calc.screenlength;
         
             if(size == 0)
                 return false;
@@ -180,7 +172,6 @@ addEventListener('load' , (e) => {
         
             content = content.slice(0,-1);
             calc.setScreenValue(content);
-            calc.setScreenLength(--size);
             screen.textContent = calc.screenValue;
             return true;
         }
