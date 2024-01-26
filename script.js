@@ -130,6 +130,8 @@ addEventListener('load' , (e) => {
 
     function calculatorLogic(e, calc) {
 
+        let currentOperator = document.querySelector('#current-operator');
+
         function printToScreen(num){
             let screen = document.querySelector('#screen');
         
@@ -148,7 +150,7 @@ addEventListener('load' , (e) => {
         }
         
         function printOperatorToScreen(id){
-            let operatorScreen = document.querySelector('#current-operator');
+            let operatorScreen = currentOperator;
             const idToOperator = {add:'+', substract:'-', division:'/', multiplication:'*', '':''};
             operatorScreen.textContent = idToOperator[id];
         }
@@ -199,7 +201,7 @@ addEventListener('load' , (e) => {
             if(id == 'clear'){
                 calc.clearArray();
                 clearScreen();
-                let currOperator = document.querySelector('#current-operator');
+                let currOperator = currentOperator;
                 currOperator.textContent = '';
             }
         
@@ -215,6 +217,7 @@ addEventListener('load' , (e) => {
                     calc.setOperator('');
                     printToScreen(calc.getNumber != undefined ? calc.getNumber : '');
                     calc.clearArray();
+                    currentOperator.textContent='';
             }
         
             }
