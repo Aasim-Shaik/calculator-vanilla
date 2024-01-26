@@ -242,11 +242,12 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 4px;
 }
 
 .utility-button {
 
-    max-width: 28%;
+    /* max-width: 28%; */
 
     flex: 1;
 

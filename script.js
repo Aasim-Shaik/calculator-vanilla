@@ -195,6 +195,14 @@ addEventListener('load' , (e) => {
                 let currOperator = currentOperator;
                 currOperator.textContent = '';
             }
+            
+            if(id == 'negation'){
+                let screenVal = calc.screenValue;
+                if(screenVal != '' && !isNaN(screenVal)){
+                    clearScreen();
+                    printToScreen((+screenVal)*(-1));
+                }
+            }
         
             if(id == 'backspace')
                 backspaceScreen();
