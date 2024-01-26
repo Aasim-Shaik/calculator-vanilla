@@ -20,6 +20,8 @@ html {
     --fg-color : #606377;
 
     --calculator-outline : #d7d9e4;
+    --utility-color : #e4ccc8 ;
+    --operator-color : #a3c2bc;
 
     --text-color : #606377;
 
@@ -34,6 +36,8 @@ html {
     --fg-color : #7f859e;
 
     --calculator-outline : #d7d9e4;
+    --utility-color : #9b7780 ;
+    --operator-color : #3c4b55;
 
     --text-color : #d7d9e4;
 
@@ -170,7 +174,7 @@ body {
     justify-content: space-between;
     border: 2px solid var(--calculator-outline);
     border-radius: var(--radius);
-    background-color: rgb(201, 228, 169);
+    background-color: #d7ecb4;
 
 }
 
@@ -181,7 +185,7 @@ body {
     border: 0px solid var(--calculator-outline);
     border-radius: var(--radius);
 
-    background-color: rgb(201, 228, 169);
+    background-color: transparent;
 
     display: flex;
     justify-content: flex-end;
@@ -197,6 +201,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: transparent;
 
     height: 100%;
     width: 70px;
@@ -259,7 +265,7 @@ body {
     border: 1px solid var(--calculator-outline);
     border-radius: var(--radius);
 
-    background-color: var(--bg-color);
+    background-color: var(--utility-color);
 
 }
 
@@ -282,7 +288,7 @@ body {
     border: 1px solid var(--calculator-outline);
     border-radius: var(--radius);
 
-    background-color: var(--bg-color);
+    background-color: var(--operator-color);
 
 }
 
@@ -356,7 +362,7 @@ body {
     font-weight: inherit;
     font-size: inherit;
 
-    background-color: var(--bg-color);
+    background-color: var(--operator-color);
 }
 
 button:hover,
