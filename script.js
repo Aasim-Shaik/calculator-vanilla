@@ -131,7 +131,7 @@ addEventListener('load' , (e) => {
         
             let length = calc.screenlength;
         
-            if(length >17){
+            if(length >16){
                 screen.textContent = 'Too long Number!';
                 return false;
             }
