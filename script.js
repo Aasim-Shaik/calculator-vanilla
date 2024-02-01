@@ -9,7 +9,7 @@ class Calculator {
     
     #operator ;
     
-    #operatorMap = {add:this.#add, substract:this.#substract, division:this.#divide, multiplication:this.#multiply, '':this.#doNothing};
+    #operatorMap = {add:this.#add, subtract:this.#subtract, division:this.#divide, multiplication:this.#multiply, '':this.#doNothing};
     
     constructor() {
 
@@ -77,7 +77,7 @@ class Calculator {
             return -1;
     }
 
-    #substract(num1 , num2){
+    #subtract(num1 , num2){
         if(typeof num1 == 'number' && typeof num2 == 'number')
             return num1 - num2;
         else
@@ -122,6 +122,51 @@ addEventListener('load' , (e) => {
         calculatorLogic(e,calc);
     });
 
+    addEventListener('keydown' , (e) => {
+        console.log(e.key);
+        if(!isNaN(+(e.code.slice(-1)))){
+            let numButton = document.querySelector(`#num${e.code.slice(-1)}`);
+            numButton.click();
+        }
+        
+        switch (e.key) {
+            case '+': document.querySelector('#add').click();
+                
+                break;
+
+            case '-': document.querySelector('#subtract').click();
+                
+                break;
+            case '*': document.querySelector('#multiplication').click();
+                
+                break;
+            case '/': document.querySelector('#division').click();
+                
+                break;
+            case '=': document.querySelector('#equal').click();
+                
+                break;
+            case 'Enter': document.querySelector('#equal').click();
+                
+                break;
+            case 'Backspace': document.querySelector('#backspace').click();
+                
+                break;
+            case 'c': document.querySelector('#clear').click();
+                
+                break;
+            case 'Escape': document.querySelector('#clear').click();
+                
+                break;
+            case 'n': document.querySelector('#negation').click();
+                
+                break;
+        
+            default:
+                break;
+        }
+    });
+
     function calculatorLogic(e, calc) {
 
         let currentOperator = document.querySelector('#current-operator');
@@ -144,7 +189,7 @@ addEventListener('load' , (e) => {
         
         function printOperatorToScreen(id){
             let operatorScreen = currentOperator;
-            const idToOperator = {add:'+', substract:'-', division:'/', multiplication:'*', '':''};
+            const idToOperator = {add:'+', subtract:'-', division:'/', multiplication:'*', '':''};
             operatorScreen.textContent = idToOperator[id];
         }
         
@@ -241,7 +286,7 @@ addEventListener('load' , (e) => {
                 printToScreen(digit);
             }
         
-            if( id == 'add' || id == 'substract' || id == 'division' || id == 'multiplication' ){
+            if( id == 'add' || id == 'subtract' || id == 'division' || id == 'multiplication' ){
                 printOperatorToScreen(id);
                 let content = calc.screenValue;
                 if(content == ''){
